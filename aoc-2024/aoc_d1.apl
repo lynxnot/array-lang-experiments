@@ -3,12 +3,11 @@
 infile ← './aoc_d1-input.txt'
 input ← (⎕CSV⍠'Separator' ' ')infile''(2 0 0 2)
 
-⍝ sort each column indipendently, output is transposed
+⍝ sort each column independently, output is transposed
 colsort ← (⊂∘⍋⌷⊢)⍤1⍉
 
-⍝ sum of the absolute distances between samples
-⍝ after sorting each column indipendently
-solve1 ← +/(|⍤-⌿colsort)   
+⍝ sum of the absolute distances between samples after sort
+solve1 ← +/(|⍤-⌿colsort)
 ⎕ ← solve1 input
 
 ⍝ get a ref to each column
